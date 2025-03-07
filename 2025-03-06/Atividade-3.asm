@@ -3,8 +3,7 @@ mensagem1: .asciiz "Digite um numero inteiro positivo: "
 mensagem2: .asciiz "Pressione 'd' para contar positivo, ou 'e' para contar negativo: "
 mensagem3: .asciiz "\n Contando... \n"
 pula_linha: .asciiz "\n"
-opcao1: .asciiz "d"
-opcao2: .asciiz "e"
+
 
 .text
 
@@ -12,8 +11,8 @@ opcao2: .asciiz "e"
 
 main:
 
-la $s0, opcao1
-la $s1, opcao2
+li $s0, 'd'
+li $s1, 'e'
 #-----------------
 
 li $v0, 4
@@ -69,6 +68,7 @@ la $a0, mensagem3
 syscall
 
 sub $s3, $s3, $t0
+subi $s3, $s3, 1
 
 jal imprime2
 imprime2:
@@ -82,7 +82,8 @@ li $v0, 4
 la $a0, pula_linha
 syscall
 
-sub $s2, $s2, 1
+subi $s2, $s2, 1
+
 jr $ra
 #-------------------
 
