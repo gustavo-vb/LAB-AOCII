@@ -1,7 +1,7 @@
 .data
     enunciado: .asciiz "Frase original: "
-    programa: .asciiz "\nConvertendo para caixa grande...\n"
     frase: .asciiz "hoje eh um dia belo de chuva e neblina"
+    programa: .asciiz "\nConvertendo para caixa grande...\n"
     
 
 .text
